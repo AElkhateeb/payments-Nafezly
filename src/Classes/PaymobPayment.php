@@ -17,10 +17,10 @@ class PaymobPayment extends BaseController implements PaymentInterface
 
     public function __construct()
     {
-        $this->paymob_api_key = config('nafezly-payments.PAYMOB_API_KEY');
-        $this->paymob_integration_id = config('nafezly-payments.PAYMOB_INTEGRATION_ID');
-        $this->paymob_iframe_id = config("nafezly-payments.PAYMOB_IFRAME_ID");
-        $this->currency = config("nafezly-payments.PAYMOB_CURRENCY");
+        $this->paymob_api_key = get_option('PAYMOB_API_KEY', 'payments');//config('nafezly-payments.PAYMOB_API_KEY');
+        $this->paymob_integration_id = get_option('PAYMOB_INTEGRATION_ID', 'payments');//config('nafezly-payments.PAYMOB_INTEGRATION_ID');
+        $this->paymob_iframe_id = get_option('PAYMOB_IFRAME_ID', 'payments');//config("nafezly-payments.PAYMOB_IFRAME_ID");
+        $this->currency = get_option('PAYMOB_CURRENCY', 'payments');//config("nafezly-payments.PAYMOB_CURRENCY");
     }
 
     /**
